@@ -3,26 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CENTRO DE IDIOMAS</title>
+    <title>Centro de Idiomas</title>
+
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/font.css">
 </head>
 <body>
-    <header class="header">
-        <div class="contenedor">
-            <h1 class="logo">IDIOMAS </h1>
-            <nav class="nav" id="nav">
-                <ul class="menu">
-                    <li class="menu__item"><a class="menu__link" href="">Inicio</a></li>
-                    <li class="menu__item"><a class="menu__link" href="">Servicios</a></li>
-                    <li class="menu__item"><a class="menu__link" href="">Intranet</a></li>
-                    <li class="menu__item"><a class="menu__link" href="">Contactos</a></li>
 
+<header class="header">
+    <div class="contenedor">
+        <h1 class="logo">Centro de Idiomas</h1>
 
+        <button class="icon-menu" id="btn-menu">☰</button>
 
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <nav class="nav" id="nav">
+            <ul class="menu">
+
+                <li><a href="#" class="menu__link">Inicio</a></li>
+
+                <!-- SUBMENÚ SERVICIOS -->
+                <li class="submenu">
+                    <a href="#" class="menu__link">Servicios ▾</a>
+                    <ul class="submenu__items">
+                        <li><a href="#">Clases Online</a></li>
+                        <li><a href="#">Clases Presenciales</a></li>
+                        <li><a href="#">Traducciones</a></li>
+                    </ul>
+                </li>
+
+                <!-- SUBMENÚ CURSOS -->
+                <li class="submenu">
+                    <a href="#" class="menu__link">Cursos ▾</a>
+                    <ul class="submenu__items">
+                        <li><a href="#">Inglés</a></li>
+                        <li><a href="#">Francés</a></li>
+                        <li><a href="#">Portugués</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="menu__link">Intranet</a></li>
+                <li><a href="#" class="menu__link">Contacto</a></li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="banner">
+    <div class="banner__contenido">
+        <h2>Aprende idiomas fácilmente</h2>
+        <p>Domina nuevos idiomas hoy</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 Centro de Idiomas</p>
+</footer>
+
+<script src="js/menu.js"></script>
+
 </body>
 </html>
+
