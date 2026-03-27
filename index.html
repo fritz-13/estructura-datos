@@ -1,12 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Idiomas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de Idiomas</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
+<!-- CSS -->
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    background: #222;
+    color: white;
+    padding: 10px;
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.icon-menu {
+    float: right;
+    font-size: 25px;
+    background: #FBA919;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* NAV */
+.nav {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
+
+.menu {
+    list-style: none;
+}
+
+/* LINKS */
+.menu__link {
+    display: block;
+    padding: 12px;
+    background: #FBA919;
+    color: white;
+    text-decoration: none;
+}
+
+/* SUBMENÚ */
+.submenu {
+    position: relative;
+}
+
+.submenu__items {
+    display: none;
+    list-style: none;
+}
+
+.submenu__items a {
+    background: #333;
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+.submenu.activo .submenu__items {
+    display: block;
+}
+
+/* BANNER */
+.banner {
+    height: 250px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner h2 {
+    font-size: 30px;
+}
+
+/* FOOTER */
+.footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* DESKTOP */
+@media(min-width:768px) {
+    .nav {
+        display: block !important;
+    }
+
+    .icon-menu {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu__link {
+        background: none;
+        margin-left: 15px;
+    }
+
+    /* SUBMENU DESKTOP */
+    .submenu__items {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        display: none;
+        min-width: 150px;
+    }
+
+    .submenu:hover .submenu__items {
+        display: block;
+    }
+}
+</style>
+
 </head>
+
 <body>
 
 <header class="header">
@@ -17,16 +158,64 @@
 
         <nav class="nav" id="nav">
             <ul class="menu">
+
                 <li><a href="#" class="menu__link">Inicio</a></li>
-                <li><a href="#" class="menu__link">Servicios</a></li>
-                <li><a href="#" class="menu__link">Cursos</a></li>
+
+                <li class="submenu">
+                    <a href="#" class="menu__link">Servicios ▾</a>
+                    <ul class="submenu__items">
+                        <li><a href="#">Clases Online</a></li>
+                        <li><a href="#">Clases Presenciales</a></li>
+                        <li><a href="#">Traducciones</a></li>
+                    </ul>
+                </li>
+
+                <li class="submenu">
+                    <a href="#" class="menu__link">Cursos ▾</a>
+                    <ul class="submenu__items">
+                        <li><a href="#">Inglés</a></li>
+                        <li><a href="#">Francés</a></li>
+                        <li><a href="#">Portugués</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="menu__link">Intranet</a></li>
                 <li><a href="#" class="menu__link">Contacto</a></li>
+
             </ul>
         </nav>
     </div>
 </header>
 
-<script src="js/menu.js"></script>
+<!-- BANNER -->
+<section class="banner">
+    <div>
+        <h2>Aprende idiomas fácilmente</h2>
+        <p>Domina nuevos idiomas hoy</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Centro de Idiomas</p>
+</footer>
+
+<!-- JS -->
+<script>
+const btnMenu = document.getElementById('btn-menu');
+const nav = document.getElementById('nav');
+const submenus = document.querySelectorAll('.submenu');
+
+btnMenu.addEventListener('click', () => {
+    nav.classList.toggle('mostrar');
+});
+
+submenus.forEach(menu => {
+    menu.addEventListener('click', () => {
+        menu.classList.toggle('activo');
+    });
+});
+</script>
 
 </body>
 </html>
