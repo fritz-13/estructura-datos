@@ -8,35 +8,26 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* HEADER */
 .header {
     background: #222;
     color: white;
-    padding: 10px 0;
-}
-
-.contenedor {
-    width: 90%;
-    margin: auto;
-}
-
-.logo {
-    display: inline-block;
+    padding: 10px;
 }
 
 .icon-menu {
     float: right;
-    font-size: 25px;
     background: #FBA919;
     border: none;
     color: white;
-    padding: 5px 10px;
     cursor: pointer;
 }
 
-/* NAV */
 .nav {
     display: none;
+}
+
+.mostrar {
+    display: block;
 }
 
 .menu {
@@ -49,94 +40,5 @@ body {
     background: #FBA919;
     color: white;
     text-decoration: none;
-}
-
-/* SUBMENU */
-.submenu {
-    position: relative;
-}
-
-.submenu__items {
-    display: none;
-    list-style: none;
-}
-
-.submenu__items li a {
-    display: block;
-    padding: 10px;
-    background: #333;
-    color: white;
-    text-decoration: none;
-}
-
-.submenu__items li a:hover {
-    background: #555;
-}
-
-/* MOSTRAR SUBMENU */
-.submenu.activo .submenu__items {
-    display: block;
-}
-
-.menu__link:hover {
-    background: white;
-    color: #FBA919;
-}
-
-.mostrar {
-    display: block;
-}
-
-/* BANNER */
-.banner {
-    background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center/cover;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-
-/* FOOTER */
-.footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-/* RESPONSIVE */
-@media(min-width:768px) {
-    .nav {
-        display: block !important;
-    }
-
-    .icon-menu {
-        display: none;
-    }
-
-    .menu {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .menu__link {
-        background: none;
-        margin-left: 15px;
-    }
-
-    /* SUBMENU DESKTOP */
-    .submenu__items {
-        position: absolute;
-        top: 40px;
-        left: 0;
-        display: none;
-        min-width: 150px;
-    }
-
-    .submenu:hover .submenu__items {
-        display: block;
-    }
 }
 
